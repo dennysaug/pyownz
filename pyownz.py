@@ -13,7 +13,7 @@ from google import search
 def main():
 
     print "##### Scan Google ######"
-    #O PARAMETRO PASSADO NO GOOGLEENGINE É A KEY DO 2CAPTCHA.COM USADA PARA RESOLVER CAPTCHAS VIA WEBSERVICE.
+    #O PARAMETRO PASSADO NO GOOGLEENGINE EH A KEY DO 2CAPTCHA.COM USADA PARA RESOLVER CAPTCHAS VIA WEBSERVICE.
     buscar = search.GoogleEngine("777c64eaf7b22ead16668198b16266e1")
     print "Selecione a opcao desejada:\n 1) Pesquisar por string\n 2) Informar arquivo contendo strings\n 3) Executar testes no arquivo com hosts"
     opcao = raw_input("\nOpcao: ")
