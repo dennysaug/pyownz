@@ -55,7 +55,7 @@ class GoogleEngine:
                         wait = False
                         return res[1]
                     else:
-                        if i > 4:
+                        if i > 15:
                             return True
                         i = i + 1
                         time.sleep(15)
@@ -125,7 +125,7 @@ class GoogleEngine:
 
                     i = 1
                     # captura os links dos resultados
-                    links = soup.findAll("h3", {"class": "r"})
+                    links = soup.findAll("div", {"class": "r"})
                     for link in links:
                         link = link.findChild().attrs[0][1]
                         fullurl = link
